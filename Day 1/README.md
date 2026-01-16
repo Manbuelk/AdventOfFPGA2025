@@ -4,5 +4,6 @@ For every rotation, the number is split into two parts, the lower two digits (re
 For the lower part, when going right I just add it to the previous dial position; when going left I first take the nine's complement (99 - the number), then later add one to get to the ten's complement (100 - the number), after which I xor the carry out bit with 1 to subtract 100 again (which leaves us with just the subtraction of the number).\
 For part one, I then check whether the lower two digits are 0; if so I add 1 to the sum.\
 For part two, I add one to the sum if the previous dial position was not 0 and the new dial position is either 0 or has under-/overflowed, depending on  whether it is a right or left rotation.\
-Since there are at least 3 cycles between one newline character and the next(\n, R or L and at least one digit), the BCD adders have been designed to be constrained as multi cycle paths with a cycle length of 3.\
+Since there are at least 3 cycles between one newline character and the next (\n, R or L and at least one digit), the BCD adders have been designed to be constrained as multi cycle paths with a cycle length of 3.\
 The module has two parameters, MAX_DECIMAL_IN, which is the maximum number of digits in line after the L or R, and MAX_DECIMAL_SUMMED, which is the maximum number of digits of the results.
+
