@@ -1,0 +1,5 @@
+#Advent of FPGA 2025 Day 3
+
+For this day I used a chain of registers that take the value of the next lowest register whenever a new digit is read in if either the next lowest register contains a larger value or the next highest register took its own value. This is always correct because a higher digit having a higher value is always more valuable than a lower digit having a higher value as long as there are enough digits remaining to fill all lower digits.
+Since there are at least 2 cycles between one newline character and the next(\n and at least one digit), the BCD adders have been designed to be constrained as multi cycle paths with a cycle length of 2.
+The module has two parameters, MAX_DECIMAL_SUMMED_PART_ONE and MAX_DECIMAL_SUMMED_PART_TWO, which set the maximum amount of digits for the output of part one and two respectively.
